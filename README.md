@@ -16,6 +16,6 @@ Sudoku_Solver/
 |   ├── sql_env.py        # SQL database management and CSV migration logic
 |   ├── csv_env.py        # CSV data initialization
 |   └── tools.py          # Core utility functions (indexing, printing, validation)
-├── brutal_solver.py       # Solve Sudoku using a recursive function
+├── brutal_solver.py      # Solve Sudoku using a recursive function
 └── q_learning_solver.py  # An agent repeatedly explore a Sudoku puzzle to find the solution.
 ```
