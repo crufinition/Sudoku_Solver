@@ -11,7 +11,7 @@ It features a SQL-backed data environment for managing large datasets and a coll
 
 ```text
 Sudoku_Solver/
-├── sudoku_env/                # A custome Python package
+├── sudoku_env/           # A custome Python package
 |   ├── __init__.py       # Package initialization for clean imports
 |   ├── sql_env.py        # SQL database management and CSV migration logic
 |   ├── csv_env.py        # CSV data initialization
