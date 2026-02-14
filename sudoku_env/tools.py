@@ -4,7 +4,8 @@ __all__ = [
     'col_idx',
     'grid_idx',
     'single_check',
-    'check'
+    'check',
+    'error_count'
     ]
 
 # Display puzzle and solution
@@ -61,3 +62,13 @@ def check(idx, puzzle):
     if not single_check([puzzle[i] for i in grid_idx(idx)]):
         return False
     return True
+
+#### Count
+def error_count(idx, puzzle):
+    '''Count the number of errors the given index makes'''
+    number = puzzle[idx]
+    row_err = sum([number == puzzle[i] for i in row_idx(idx)])-1
+    col_err = sum([number == puzzle[i] for i in col_idx(idx)])-1
+    grid_err = sum([number == puzzle[i] for i in grid_idx(idx)])-1
+    total_err = row_err+col_err+grid_err
+    return total_err
