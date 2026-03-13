@@ -6,6 +6,7 @@ from sudoku_env.sql_env import sudoku_sql
 from sudoku_env.tools import *
 
 # connect to SQLite database
+db = sudoku_sql()
 
 data = pd.read_sql('SELECT * FROM sudoku LIMIT 1', db)
 puzzle = list(data['puzzle'][0])
