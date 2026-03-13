@@ -1,6 +1,10 @@
 import random as rd
 from copy import deepcopy
 
+__all__ = [
+    'generate_unique_puzzle'
+]
+
 def is_valid(board, row, col, num):
     for i in range(4):
         if board[row][i] == num or board[i][col] == num:
@@ -28,7 +32,7 @@ def count_solutions(board):
                 return count
     return 1 # Found a complete solution
 
-def generate_unique_puzzle(empties=10, attempts=10000):
+def generate_unique_puzzle(empties=10, attempts=10000, info=False):
     assert 0<empties<16
     # 1. Start with a full board
     board = [[0 for _ in range(4)] for _ in range(4)]
@@ -74,7 +78,8 @@ def generate_unique_puzzle(empties=10, attempts=10000):
         
             if x == 0:
                 return puzzle, solution
-    print(f"I'm sorry, I failed to find the puzzle you want in {attempts} attempts.")
+    if info:
+        print(f"I'm sorry, I failed to find the puzzle you want in {attempts} attempts.")
     return [],[]
 
 # Test it
