@@ -83,7 +83,7 @@ def generate_unique_puzzle(empties=10, attempts=10000, info=False):
     return [],[]
 
 # Test it
-while True:
+while True and __name__=="main":
     n = int(input("\nNumber of blanks: "))
     unique_puzzle, solution = generate_unique_puzzle(n)
     print(f"A puzzle with {n} blanks:")
